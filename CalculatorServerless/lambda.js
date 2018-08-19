@@ -1,6 +1,7 @@
 let AWS = require('aws-sdk');
 exports.handler = function(event, context, callback) {
-	    var response = {
+
+    var response = {
         "statusCode": 200,
         "headers": {
             "Access-Control-Allow-Origin": "*",
