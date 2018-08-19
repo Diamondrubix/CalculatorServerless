@@ -2,14 +2,15 @@ let AWS = require('aws-sdk');
 const ddb = new AWS.DynamoDB.DocumentClient();
 exports.handler = function (event, context, callback) {
 
+
 	ddb.delete({
 		TableName: 'music',
 		Key: { 'artist': 'adam', 'songTitle': 'bestSongEver' }
 	}, function (err, data) {
 		if (err) {
-			//handle error
+				callback(null, 'failed');
 		} else {
-			//your logic goes here
+				callback(null, 'worked');
 		}
 	});
 
@@ -25,6 +26,6 @@ exports.handler = function (event, context, callback) {
 		}
 	});
 	*/
+	//callback(null, 'Successfully executed');
 
-	callback(null, 'Successfully executed');
 }
