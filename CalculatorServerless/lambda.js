@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
         "longest": "surpise"
     };
 
-    var response = {
+    var response =  {
         "statusCode": 200,
         "headers": {
             "Access-Control-Allow-Origin": "*",
@@ -30,7 +30,7 @@ exports.handler = function(event, context, callback) {
 		case "Multiply":
 			result = event.LeftParameter * event.RightParameter;
 			break;
-		case "Devide":
+		case "Divide":
 			result = event.LeftParameter / event.RightParameter;
 			break;
 		case "Mod":
