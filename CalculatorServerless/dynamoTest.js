@@ -3,21 +3,11 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 exports.handler = function (event, context, callback) {
 
 
-	ddb.delete({
-		TableName: 'music',
-		Key: { 'artist': 'adam', 'songTitle': 'bestSongEver' }
-	}, function (err, data) {
-		if (err) {
-				callback(null, 'failed');
-		} else {
-				callback(null, 'worked');
-		}
-	});
 
-	/*
+	
 	ddb.put({
 		TableName: 'music',
-		Item: { 'artist': 'adam', 'songTitle': 'bestSongEver' }
+		Item: { 'artist': 'test', 'songTitle': 'this' }
 	}, function (err, data) {
 		if (err) {
 			//handle error
@@ -25,7 +15,7 @@ exports.handler = function (event, context, callback) {
 			//your logic goes here
 		}
 	});
-	*/
+	
 	//callback(null, 'Successfully executed');
 
 }
